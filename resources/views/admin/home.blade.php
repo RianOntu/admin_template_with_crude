@@ -158,6 +158,8 @@
                               <li><a class="drop-menu" href="/pages">See Pages</a></li>
                               <li><a class="drop-menu" href="/updatePhoneEmail/1">Update Phone and Email</a></li>
                               <li><a class="drop-menu" href="/updateFooter/1">Update Footer</a></li>
+                              <li><a class="drop-menu" href="/createnewUser">Create New User</a></li>
+                              <li><a class="drop-menu" href="/users">See All Users</a></li>
                               </ul>
                           </div>
                         

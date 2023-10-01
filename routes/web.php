@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\FooterController;
+use App\Http\Controllers\NormalUsersController;
 use App\Http\Controllers\PageController;
 use App\Http\Controllers\PhoneEmail;
 use App\Http\Controllers\PostController;
@@ -60,12 +61,19 @@ Route::post('/phone_email_create',[PhoneEmail::class,"create"]);
 Route::get('/updatePhoneEmail/{id}',[PhoneEmail::class,"update"]);
 Route::post('/edit/{id}',[PhoneEmail::class,"edit"]);
 
-// footer route 
+// footer routes 
 Route::get('/create_footer',[FooterController::class,"index"]);
 Route::post('/footer_create',[FooterController::class,"create"]);
 Route::get('/updateFooter/{id}',[FooterController::class,"update"]);
 Route::post('/footer_edit/{id}',[FooterController::class,"edit"]);
 
+//Normal Users Routes
 
+Route::get('/createnewUser',[NormalUsersController::class,'index']);
+Route::post('/user_create',[NormalUsersController::class,'create']);
+Route::get('/users',[NormalUsersController::class,'users']);
+Route::get('/user_update/{id}',[NormalUsersController::class,'update']);
+Route::post('/user_edit/{id}',[NormalUsersController::class,'edit']);
+Route::get('/user_delete/{id}',[NormalUsersController::class,'delete']);
 
 
