@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="plugins/fontawesome-free/css/all.min.css">
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="dist/dropdown.css">
+    <script src="https://cdn.ckeditor.com/ckeditor5/30.0.0/classic/ckeditor.js"></script>
     <!-- Ionicons -->
     <!-- <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css"> -->
     <!-- Tempusdominus Bootstrap 4 -->
@@ -43,10 +44,13 @@
       aside{
         position: fixed!important;
       }
+      .ck-editor__editable_inline{
+        height:450px;
+      }
     </style>
 </head>
 <body>
-    <aside class="main-sidebar sidebar-dark-primary text-white bg-lightblue disabled elevation-4 sidebar-no-expand">
+    <aside class="main-sidebar sidebar-dark-primary text-white bg-lightblue disabled elevation-4 sidebar-no-expand" id="sidebar">
         <!-- Brand Logo -->
         <a href="admin" class="brand-link bg-lightblue text-sm">
         <img src={{asset("logo.png")}} alt="Store Logo" class="brand-image img-circle elevation-3" style="opacity: .8;width: 1.7rem;height: 1.7rem;max-height: unset">
@@ -68,91 +72,110 @@
                 <div class="clearfix"></div>
                 <!-- Sidebar Menu -->
                 <nav class="mt-4">
-                   <ul class="nav nav-pills nav-sidebar flex-column text-sm nav-compact nav-flat nav-child-indent nav-collapse-hide-child" data-widget="treeview" role="menu" data-accordion="false">
-                    <li class="nav-item dropdown">
-                      <a href="./" class="nav-link nav-home">
-                        <i class="nav-icon fas fa-tachometer-alt"></i>
-                        <p>
-                          Dashboard
-                        </p>
-                      </a>
-                    </li> 
-                    <li class="nav-item dropdown">
-                      <a href="admin/?page=offenses" class="nav-link nav-offenses">
-                        <i class="nav-icon fas fa-file-alt"></i>
-                        <p>
-                          Offense Records
-                        </p>
-                      </a>
-                    </li>
-                    <li class="nav-item dropdown">
-                      <a href="admin/?page=drivers" class="nav-link nav-drivers">
-                        <i class="nav-icon fas fa-id-card"></i>
-                        <p>
-                          Drivers List
-                        </p>
-                      </a>
-                    </li>
-                    
-                    <li class="nav-item dropdown">
-                      <a href="admin/?page=reports" class="nav-link nav-reports">
-                        <i class="nav-icon fas fa-file"></i>
-                        <p>
-                          Reports
-                        </p>
-                      </a>
-                    </li>
-                    <li class="nav-header">Maintenance</li>
-                    <li class="nav-item dropdown">
-                      <a href="admin/?page=maintenance/offenses" class="nav-link nav-maintenance_offenses">
-                        <i class="nav-icon fas fa-traffic-light"></i>
-                        <p>
-                          Offenses List
-                        </p>
-                      </a>
-                    </li>
-                    
-                    <li class="nav-item dropdown">
-                      <a href="admin/?page=user/list" class="nav-link nav-user_list">
-                        <i class="nav-icon fas fa-users"></i>
-                        <p>
-                          User List
-                        </p>
-                      </a>
-                    </li>
-                    <li class="nav-item dropdown">
-                      <a href="admin/?page=system_info" class="nav-link nav-system_info">
-                        <i class="nav-icon fas fa-cogs"></i>
-                        <p>
-                          Settings
-                        </p>
-                      </a>
-                    </li>
-                    <li class="nav-item dropdown">
+                  <ul class="nav nav-pills nav-sidebar flex-column text-sm nav-compact nav-flat nav-child-indent nav-collapse-hide-child" data-widget="treeview" role="menu" data-accordion="false">
+                   <li class="nav-item dropdown">
+                     <a href="/admin" class="nav-link nav-home">
+                       <i class="nav-icon fas fa-tachometer-alt"></i>
+                       <p>
+                         Dashboard
+                       </p>
+                     </a>
+                   </li> 
+                  
+                  
+                  
+                  
+                   <li class="nav-item dropdown">
+                    <div class="menu">
+                      <header>
+                        <button class="menu-button"><i class="nav-icon fas fa-clipboard margin"></i>
+                          Post</button>
+                      </header>
+                      <ul class="menu-list">
+                        <div class="item" style="width:117px;margin-left:54px;">
+                          <li class="list"><a class="list" href="/post">Post something</a></li>
+                          <li class="list"><a class="list" href="/posts">See posts</a></li>
+                        </div>
+                        
+                        
+                      </ul>
+                    </div>
+                     
+                   </li>
+                     <li class="nav-item dropdown">
+                      <div class="menu">
+                        <header>
+                          <button class="menu-button"><i class="nav-icon fas fa-file-alt margin"></i>
+                            Page</button>
+                        </header>
+                        <ul class="menu-list">
+                          <div class="item" style="width:117px;margin-left:54px;">
+                            <li class="list"><a class="list" href="/page">Add Pages</a></li>
+                          <li class="list"><a class="list" href="/pages">See Pages</a></li>
+                          </div>
+                          
+                        </ul>
+                      </div>
+                      
+                     </li>
+                     <li class="nav-item dropdown">
+                      <div class="menu">
+                        <header>
+                          <button class="menu-button"><i class="nav-icon fas fa-id-card margin"></i>
+                            Contact and Footer</button>
+                        </header>
+                        <ul class="menu-list">
+                          <div class="item" style="width:117px;margin-left:54px;">
+                            <li class="list"><a class="list" href="/updatePhoneEmail/1">Update Phone and Email</a></li>
+                            <li class="list"><a class="list" href="/updateFooter/1">Update Footer</a></li>
+                          </div>
+                          
+                          
+                        </ul>
+                      </div>
                        
-                         
-                          <div class="dropdown d-inline-block">
-                            <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                <i class="nav-icon fas fa-cogs margin"></i>
-                              Tools
-                            </button>
-                            <ul id='menu'>
-                              <li><a class="drop-menu" href="/post">Post something</a></li>
-                              <li><a class="drop-menu" href="/posts">See posts</a></li>
-                              <li><a class="drop-menu" href="/page">Add Pages</a></li>
-                              <li><a class="drop-menu" href="/pages">See Pages</a></li>
-                              <li><a class="drop-menu" href="/updatePhoneEmail/1">Update Phone and Email</a></li>
-                              <li><a class="drop-menu" href="/updateFooter/1">Update Footer</a></li>
-                              <li><a class="drop-menu" href="/createnewUser">Create New User</a></li>
-                              <li><a class="drop-menu" href="/users">See All Users</a></li>
-                              </ul>
+                     </li>
+                     <li class="nav-item dropdown">
+                      <div class="menu">
+                        <header>
+                          <button class="menu-button"><i class="nav-icon fas fa-users margin"></i>
+                            User</button>
+                        </header>
+                        <ul class="menu-list">
+                          <div class="item" style="width:117px;margin-left:54px;">
+                            <li class="list"><a class="list" href="/createnewUser">Create New User</a></li>
+                            <li class="list"><a class="list" href="/users">See All Users</a></li>
                           </div>
                         
-                      </li>
+                          
+                        </ul>
+                      </div>
+                    
+                     </li>
+                    </li>
+                    <li class="nav-item dropdown">
+                     <div class="menu">
+                       <header>
+                         <button class="menu-button"><i class="nav-icon fas fa-user-secret margin"></i>
+                           Privacy Policy</button>
+                       </header>
+                       <ul class="menu-list">
+                         <div class="item" style="width:117px;margin-left:54px;">
+                           
+                           <li class="list"><a class="list" href="/updatePrivacyPolicy/1">Update Privacy Policy</a></li>
+                         </div>
+                       
+                         
+                       </ul>
+                     </div>
+                   
+                    </li>
+                        
                      
-                  
-                  </ul>
-                </nav>
+                    
+                 
+                 </ul>
+               </nav>
                 <!-- /.sidebar-menu -->
               </div>
             </div>
@@ -175,7 +198,7 @@
     <nav class="main-header navbar navbar-expand navbar-dark border border-light border-top-0  border-left-0 border-right-0 navbar-light text-sm bg-lightblue">
         <!-- Left navbar links -->
         <ul class="navbar-nav">
-          <li class="nav-item">
+          <li class="nav-item" id="hamburger">
           <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>
           </li>
           <li class="nav-item d-none d-sm-inline-block">
@@ -231,7 +254,7 @@
         </ul>
       </nav>
     <h1 class="text-center">Post.....</h1>
-    <div class="container mt-5 mb-5">
+    <div class="container mt-5 mb-5 ">
         <form action="{{url('create')}}" method="POST" enctype="multipart/form-data"  >
       @csrf
             <div class="form-group">
@@ -257,21 +280,18 @@
             </div>
             <div class="form-group">
               <label for="exampleInputPassword1">Body:</label>
-              <textarea type="text" class="form-control" id="exampleInputPassword1" placeholder="Enter Body" name='body'></textarea>
+              <textarea type="text" class="form-control" id="editor" placeholder="Enter Body" name='body'></textarea>
               <script>
-                tinymce.init({
-                  selector: 'textarea',
-                  plugins: 'ai tinycomments mentions anchor autolink charmap codesample emoticons image link lists media searchreplace table visualblocks wordcount checklist mediaembed casechange export formatpainter pageembed permanentpen footnotes advtemplate advtable advcode editimage tableofcontents mergetags powerpaste tinymcespellchecker autocorrect a11ychecker typography inlinecss',
-                  toolbar: 'undo redo | blocks fontfamily fontsize | bold italic underline strikethrough | link image media table mergetags | align lineheight | tinycomments | checklist numlist bullist indent outdent | emoticons charmap | removeformat',
-                  tinycomments_mode: 'embedded',
-                  tinycomments_author: 'Author name',
-                  mergetags_list: [
-                    { value: 'First.Name', title: 'First Name' },
-                    { value: 'Email', title: 'Email' },
-                  ],
-                  ai_request: (request, respondWith) => respondWith.string(() => Promise.reject("See docs to implement AI Assistant"))
-                });
-              </script>
+                ClassicEditor
+                    .create( document.querySelector( 'textarea[name="body"]' ), {
+                        ckfinder: {
+                            uploadUrl: "{{route('ckeditor.upload',['_token'=>csrf_token()])}}",
+                        },
+                    } )
+                    .catch( error => {
+                        console.error( error );
+                    } );
+            </script>
             </div>
             <div class="form-group">
               <label for="exampleInputPassword1">Image:</label>
@@ -284,20 +304,7 @@
             <div class="form-group">
               <label for="exampleInputPassword1">Meta Description:</label>
               <textarea type="text" class="form-control" id="exampleInputPassword1" placeholder="Enter Meta Description" name='meta_description'></textarea>
-              <script>
-                tinymce.init({
-                  selector: 'textarea',
-                  plugins: 'ai tinycomments mentions anchor autolink charmap codesample emoticons image link lists media searchreplace table visualblocks wordcount checklist mediaembed casechange export formatpainter pageembed permanentpen footnotes advtemplate advtable advcode editimage tableofcontents mergetags powerpaste tinymcespellchecker autocorrect a11ychecker typography inlinecss',
-                  toolbar: 'undo redo | blocks fontfamily fontsize | bold italic underline strikethrough | link image media table mergetags | align lineheight | tinycomments | checklist numlist bullist indent outdent | emoticons charmap | removeformat',
-                  tinycomments_mode: 'embedded',
-                  tinycomments_author: 'Author name',
-                  mergetags_list: [
-                    { value: 'First.Name', title: 'First Name' },
-                    { value: 'Email', title: 'Email' },
-                  ],
-                  ai_request: (request, respondWith) => respondWith.string(() => Promise.reject("See docs to implement AI Assistant"))
-                });
-              </script>
+             
             </div>
             <div class="form-group">
               <label for="exampleInputPassword1">Meta Keywords:</label>
@@ -317,6 +324,59 @@
       
           </form>
     </div>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+$(document).ready(function() {
+  var hamburger = $('#hamburger');
+  var sidebar = $("#sidebar");
+  var body = $("body");
+
+  // Function to handle actions for mobile and tablet devices
+  function mobileAndTabletActions() {
+    // Toggle sidebar collapse on hamburger menu click
+    hamburger.click(function(e) {
+      e.stopPropagation(); // Prevent document click event from triggering
+      body.addClass('sidebar-open');
+      body.removeClass('sidebar-collapse');
+    });
+
+    // Toggle sidebar collapse on click outside of the sidebar
+    $(document).click(function(e) {
+      if (!sidebar.is(e.target) && sidebar.has(e.target).length === 0) {
+        body.addClass('sidebar-collapse');
+        body.removeClass('sidebar-closed');
+        body.removeClass('sidebar-open');
+      }
+    });
+
+    // Prevent collapsing sidebar when clicking inside the sidebar
+    sidebar.click(function(e) {
+      e.stopPropagation();
+    });
+  }
+
+  // Check if the screen width matches a mobile or tablet width
+  var mqMobileTablet = window.matchMedia("(min-width: 793px)");
+
+  // Execute the mobile and tablet actions initially on page load
+  if (mqMobileTablet.matches) {
+    mobileAndTabletActions();
+  }
+
+  // Update the actions if the screen width changes
+  mqMobileTablet.addListener(function(mq) {
+    if (mq.matches) {
+      // Remove previous event listeners to avoid duplication
+      
+      $(document).off('click');
+      
+      // Call the function to apply actions for mobile and tablet devices
+      mobileAndTabletActions();
+    }
+  });
+});
+
+</script>
     <script src={{asset("plugins/bootstrap/js/bootstrap.bundle.min.js")}}></script>
     <!-- ChartJS -->
     <script src={{asset("plugins/chart.js/Chart.min.js")}}></script>

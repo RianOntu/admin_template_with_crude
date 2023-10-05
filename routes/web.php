@@ -5,8 +5,9 @@ use App\Http\Controllers\NormalUsersController;
 use App\Http\Controllers\PageController;
 use App\Http\Controllers\PhoneEmail;
 use App\Http\Controllers\PostController;
+use App\Http\Controllers\PrivacyController;
 use App\Http\Controllers\ProfileController;
-
+use App\Http\Controllers\UploadController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -51,7 +52,7 @@ Route::post('/page_create',[PageController::class,'create']);
 Route::get('/pages',[PageController::class,'pages']);
 Route::get('page_delete/{id}',[PageController::class,'delete']);
 Route::get('page_update/{id}',[PageController::class,'update']);
-Route::post('edit/{id}',[PageController::class,'edit']);
+Route::post('page_edit/{id}',[PageController::class,'edit']);
 Route::get('page_view/{id}',[PageController::class,'view']);
 
 //Phone Email route
@@ -77,3 +78,12 @@ Route::post('/user_edit/{id}',[NormalUsersController::class,'edit']);
 Route::get('/user_delete/{id}',[NormalUsersController::class,'delete']);
 
 
+//Ckeditor routes
+Route::post('/upload',[UploadController::class,'upload'])->name('ckeditor.upload');
+
+//Privacy Policy routes
+Route::get('/createPrivacyPolicy',[PrivacyController::class,'index']);
+Route::post('/privacy_create',[PrivacyController::class,'create']);
+Route::get('/privacyPolicy',[PrivacyController::class,'view']);
+Route::get('/updatePrivacyPolicy/{id}',[PrivacyController::class,'update']);
+Route::post('/privacy_edit/{id}',[PrivacyController::class,'edit']);
