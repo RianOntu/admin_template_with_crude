@@ -167,50 +167,29 @@
                         </div>
                      </div>
                      <div class="service_section_2">
-                        <div class="row">
-                           <div class="col">
-                              <div class="service_box">
-                                 <div class="breakfast_img"><img src="images/breakfast-img.png"></div>
-                              </div>
-                              <h4 class="breakfast_text">Breakfast</h4>
-                              <div class="seemore_bt"><a href="#">See More</a></div>
+                        <form action="{{url('blog-search')}}" method="get">
+
+                           @csrf
+      
+                        <div class="service_section_2">
+                           
+                           <div class="input-group">
+      
+      
+      
+                           <input type="text" name="search" class="form-control" placeholder="Search blog post here">
+      
+      
+                           <div class="input-group-append">
+                              <button class="btn btn-secondary" type="submit" style="background-color: #ffffff; border-color:#ffffff ">
+                              <i class="fa fa-search" style="color: #191919;"></i>
+                              </button>
                            </div>
-                           <div class="col">
-                              <div class="service_box">
-                                 <div class="breakfast_img"><img src="images/delivery-img.png"></div>
-                              </div>
-                              <h4 class="breakfast_text">Delivery</h4>
-                              <div class="seemore_bt"><a href="#">See More</a></div>
-                           </div>
-                           <div class="col">
-                              <div class="service_box">
-                                 <div class="breakfast_img"><img src="images/dinner-img.png"></div>
-                              </div>
-                              <h4 class="breakfast_text">Dinner</h4>
-                              <div class="seemore_bt"><a href="#">See More</a></div>
-                           </div>
-                           <div class="col">
-                              <div class="service_box">
-                                 <div class="breakfast_img"><img src="images/coffee-img.png"></div>
-                              </div>
-                              <h4 class="breakfast_text">Coffee</h4>
-                              <div class="seemore_bt"><a href="#">See More</a></div>
-                           </div>
-                           <div class="col">
-                              <div class="service_box">
-                                 <div class="breakfast_img"><img src="images/alcohol-img.png"></div>
-                              </div>
-                              <h4 class="breakfast_text">Alcohol</h4>
-                              <div class="seemore_bt"><a href="#">See More</a></div>
-                           </div>
-                           <div class="col">
-                              <div class="service_box">
-                                 <div class="breakfast_img"><img src="images/diningtable-img.png"></div>
-                              </div>
-                              <h4 class="breakfast_text">Diningtable</h4>
-                              <div class="seemore_bt"><a href="#">See More</a></div>
-                           </div>
+      
+                          
+      
                         </div>
+                         </form>
                      </div>
                   </div>
                </div>
@@ -220,7 +199,7 @@
                   <div class="container">
                      <div class="row">
                         <div class="col-sm-12">
-                           <h1 class="blog_taital">Posts</h1>
+                           <h1 class="blog_taital">See Popular Posts Here</h1>
                         </div>
                      </div>
                   </div>
