@@ -7,6 +7,8 @@ use App\Http\Controllers\PhoneEmail;
 use App\Http\Controllers\PostController;
 use App\Http\Controllers\PrivacyController;
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\RoleController;
+use App\Http\Controllers\SliderController;
 use App\Http\Controllers\UploadController;
 use Illuminate\Support\Facades\Route;
 
@@ -44,6 +46,7 @@ Route::get('post_delete/{id}',[PostController::class,'delete']);
 Route::get('post_update/{id}',[PostController::class,'update']);
 Route::post('update/{id}',[PostController::class,'edit']);
 Route::get('post_view/{id}',[PostController::class,'view']);
+Route::get('postDetails/{id}',[PostController::class,'postDetails']);
 
 //Page routes
 
@@ -87,3 +90,25 @@ Route::post('/privacy_create',[PrivacyController::class,'create']);
 Route::get('/privacyPolicy',[PrivacyController::class,'view']);
 Route::get('/updatePrivacyPolicy/{id}',[PrivacyController::class,'update']);
 Route::post('/privacy_edit/{id}',[PrivacyController::class,'edit']);
+
+//Slider routes
+
+Route::get('/createSlider',[SliderController::class,'index']);
+Route::post('/slider_create',[SliderController::class,'create']);
+Route::get('/sliders',[SliderController::class,'view']);
+Route::get('/slider_update/{id}',[SliderController::class,'update']);
+Route::post('/slider_edit/{id}',[SliderController::class,'edit']);
+
+
+//Role Routes
+Route::get('/role',[RoleController::class,'index']);
+Route::post('/role_create',[RoleController::class,'create']);
+Route::get('/roles',[RoleController::class,'view']);
+Route::get('/role_view/{id}',[RoleController::class,'details']);
+Route::get('/role_update/{id}',[RoleController::class,'update']);
+Route::post('/role_edit/{id}',[RoleController::class,'edit']);
+Route::get('/role_delete/{id}',[RoleController::class,'delete']);
+
+
+//Logout
+Route::get('/logout',[RoleController::class,'logout']);

@@ -124,13 +124,15 @@
                      </div>
                   </div>
                   <div id="main_slider" class="carousel slide" data-ride="carousel">
+                     
                      <div class="carousel-inner">
-                        <div class="carousel-item active">
+                        @foreach($slides as $index => $slide)
+                        <div class="carousel-item {{$index == 0 ? 'active' : ''}}">
                            <div class="container">
                               <div class="row">
                                  <div class="col-md-12">
-                                    <h1 class="banner_taital">Find The Best Restaurants Cafes And Bars in </h1>
-                                    <h1 class="banner_text">YOUR CITY</h1>
+                                    <h1 class="banner_taital">{{$slide->title}} </h1>
+                                    <h1 class="banner_text">{{$slide->text}}</h1>
                                     <div class="banner_main">
                                       
                                        <div class="main">
@@ -143,43 +145,10 @@
                               </div>
                            </div>
                         </div>
-                        <div class="carousel-item">
-                           <div class="container">
-                              <div class="row">
-                                 <div class="col-md-12">
-                                    <h1 class="banner_taital">Find The Best Restaurants Cafes And Bars in </h1>
-                                    <h1 class="banner_text">YOUR CITY</h1>
-                                    <div class="banner_main">
-                                    
-                                       <div class="main">
-                                          <!-- Another variation with a button -->
-                                         
-                                       </div>
-                                    </div>
-                                  
-                                 </div>
-                              </div>
-                           </div>
-                        </div>
-                        <div class="carousel-item">
-                           <div class="container">
-                              <div class="row">
-                                 <div class="col-md-12">
-                                    <h1 class="banner_taital">Find The Best Restaurants Cafes And Bars in </h1>
-                                    <h1 class="banner_text">YOUR CITY</h1>
-                                    <div class="banner_main">
-                                      
-                                       <div class="main">
-                                          <!-- Another variation with a button -->
-                                        
-                                       </div>
-                                    </div>
-                                  
-                                 </div>
-                              </div>
-                           </div>
-                        </div>
+                        @endforeach
+                    
                      </div>
+                     
                      <a class="carousel-control-prev" href="#main_slider" role="button" data-slide="prev">
                      <i class="fa fa-angle-left"></i>
                      </a>
@@ -251,50 +220,30 @@
                   <div class="container">
                      <div class="row">
                         <div class="col-sm-12">
-                           <h1 class="blog_taital">Collections Food In city</h1>
+                           <h1 class="blog_taital">Posts</h1>
                         </div>
                      </div>
                   </div>
                </div>
                <div class="blog_section_2 layout_padding">
                   <div class="container">
+                     @foreach($posts as $post)
                      <div class="row card_style border-top border-bottom border-end">
                         <div class="col-md-6">
-                           <div class="blog_img"><img src="images/blog-img1.png"></div>
+                           <div class="blog_img"><img src="images/{{$post->image}}"></div>
                         </div>
                         <div class="col-md-6">
                            <div class="blog_taital_main">
-                              <h1 class="blog_text blog_heading">This Week going</h1>
-                              <p class="lorem_text blog_title">Long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed</p>
-                              <div class="readmore_btn"><a href="#">Read More</a></div>
+                              <h1 class="blog_text blog_heading">{{$post->title}}</h1>
+                              <p class="lorem_text blog_title">{!!$post->body!!}</p>
+                              <div class="readmore_btn"><a href="postDetails/{{$post->id}}">Read More</a></div>
                            </div>
                         </div>
                      </div>
+                     @endforeach
                      
-                      <div class="row card_style border-top border-bottom border-end mt-5">
-                        <div class="col-md-6">
-                           <div class="blog_img"><img src="images/blog-img2.png"></div>
-                        </div>
-                        <div class="col-md-6">
-                           <div class="blog_taital_main">
-                              <h1 class="blog_text blog_heading">Just Delivery Food</h1>
-                              <p class="lorem_text blog_title">Long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed</p>
-                              <div class="readmore_btn"><a href="#">Read More</a></div>
-                           </div>
-                        </div>
-                      </div>
-                       <div class="row card_style border-top border-bottom border-end mt-5">
-                        <div class="col-md-6">
-                           <div class="blog_img"><img src="images/blog-img3.png"></div>
-                        </div>
-                        <div class="col-md-6">
-                           <div class="blog_taital_main">
-                              <h1 class="blog_text blog_heading">Newly Opened Cafe</h1>
-                              <p class="lorem_text blog_title">Long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed</p>
-                              <div class="readmore_btn"><a href="#">Read More</a></div>
-                           </div>
-                        </div>
-                       </div>
+                  
+                     
                      
                   </div>
                </div>

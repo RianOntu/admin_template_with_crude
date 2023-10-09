@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Models\Footer;
 use App\Models\PhoneEmail as ModelsPhoneEmail;
+use App\Models\Post;
+use App\Models\Slider;
 use Illuminate\Http\Request;
 
 class PhoneEmail extends Controller
@@ -22,7 +24,9 @@ class PhoneEmail extends Controller
     public function welcome(){
         $phonesandEmails=ModelsPhoneEmail::all();
         $footer=Footer::all();
-    return view('welcome',compact('phonesandEmails','footer'));
+        $slides=Slider::all();
+        $posts=Post::all();
+    return view('welcome',compact('phonesandEmails','footer','slides','posts'));
     }
     public function update($id){
         $phoneEmail=ModelsPhoneEmail::find($id);
