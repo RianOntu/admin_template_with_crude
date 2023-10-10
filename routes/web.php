@@ -9,6 +9,7 @@ use App\Http\Controllers\PostController;
 use App\Http\Controllers\PrivacyController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\RoleController;
+use App\Http\Controllers\ShopController;
 use App\Http\Controllers\SliderController;
 use App\Http\Controllers\UploadController;
 use Illuminate\Support\Facades\Route;
@@ -119,3 +120,10 @@ Route::get('/logo',[LogoController::class,'index']);
 Route::post('/logo_create',[LogoController::class,'create']);
 Route::get('/updateLogo/{id}',[LogoController::class,'update']);
 Route::post('/edit_logo/{id}',[LogoController::class,'edit']);
+
+//Shop routes
+Route::get('/createShop',[ShopController::class,'index']);
+Route::post('/shop_create',[ShopController::class,'create']);
+Route::get('/shop',[ShopController::class,'view']);
+Route::get('/updateShop/{id}',[ShopController::class,'update']);
+Route::post('/shop_edit/{id}',[ShopController::class,'edit']);

@@ -104,7 +104,7 @@
                               <li><a href="service.html">Services</a></li>
                               <li><a href="about.html">About</a></li>
                               <li><a href="blog.html">Blog</a></li>
-                              <li><a href="shop.html">Shop</a></li>
+                              <li><a href="/shop">Shop</a></li>
                               <li><a href="contact.html">Contacts</a></li>
                            </ul>
                         </div>

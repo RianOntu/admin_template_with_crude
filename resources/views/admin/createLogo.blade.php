@@ -58,7 +58,7 @@
           </li> -->
         </ul>
       </nav>
-    <h1 class="text-center">Create User...</h1>
+    <h1 class="text-center">Create Logo...</h1>
     <div class="container mt-5 mb-5">
         <form action="{{url('logo_create')}}" method="POST" enctype="multipart/form-data"  >
       @csrf

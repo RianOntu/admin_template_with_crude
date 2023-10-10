@@ -15,8 +15,8 @@ return new class extends Migration
             $table->id();
             $table->integer('author_id');
             $table->string('title');
-            $table->string('excerpt');
-            $table->string('body');
+            $table->longText('excerpt');
+            $table->longText('body');
             $table->string('image');
             $table->string('slug');
             $table->string('meta_description');

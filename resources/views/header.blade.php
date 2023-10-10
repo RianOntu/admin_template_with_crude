@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href={{asset("plugins/datatables-bs4/css/dataTables.bootstrap4.min.css")}}>
+    <script src="https://cdn.ckeditor.com/ckeditor5/40.0.0/classic/ckeditor.js"></script>
     <link rel="stylesheet" href={{asset("plugins/fontawesome-free/css/all.min.css")}}>
     <link rel="stylesheet" href={{asset("style.css")}}>
     <link rel="stylesheet" href={{asset("dist/dropdown.css")}}>
@@ -317,6 +318,27 @@
                             
                             
                             <li class="list"><a class="list" href="/updateLogo/2">Update Logo</a></li>
+
+                          </div>
+                        
+                          
+                        </ul>
+                      </div>
+                    
+                     </li>
+                     <li class="nav-item dropdown {{ Auth::user()->role_id==1 ? 'd-none':'' }}">
+                      <div class="menu">
+                        <header>
+                          <button class="menu-button"><i class="nav-icon fas fa-shopping-cart margin"></i>
+                            Shop</button>
+                        </header>
+                        <ul class="menu-list">
+                          <div class="item" style="width:117px;margin-left:54px;">
+                            
+                            
+                            
+                         
+                            <li class="list"><a class="list" href="/updateShop/1">Update Shop</a></li>
 
                           </div>
                         

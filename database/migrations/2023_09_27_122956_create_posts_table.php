@@ -17,11 +17,11 @@ return new class extends Migration
             $table->integer('category_id')->nullable();
             $table->string('title');
             $table->string('seo_title')->nullable();
-            $table->string('excerpt');
+            $table->longText('excerpt');
             $table->longText('body');
             $table->string('image');
             $table->string('slug');
-            $table->longText('meta_description');
+            $table->string('meta_description');
             $table->string('meta_keywords');
             $table->string('status');
             $table->integer('featured');

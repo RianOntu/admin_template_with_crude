@@ -23,7 +23,7 @@ return new class extends Migration
             $table->integer('edit');
             $table->integer('add');
             $table->integer('delete');
-            $table->string('details')->nullable();
+            $table->longText('details')->nullable();
             $table->integer('order');
             
         });

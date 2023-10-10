@@ -24,7 +24,7 @@ return new class extends Migration
             $table->string('description')->nullable();
             $table->integer('generate_permissions');
             $table->integer('server_side');
-            $table->string('details')->nullable();
+            $table->longText('details')->nullable();
             $table->timestamps();
         });
     }

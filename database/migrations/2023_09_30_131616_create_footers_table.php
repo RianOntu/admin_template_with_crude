@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::create('footers', function (Blueprint $table) {
             $table->id();
-            $table->string('description');
+            $table->longText('description');
             $table->string('address');
             $table->string('phone');
             $table->string('email');
