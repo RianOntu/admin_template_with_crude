@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Footer;
+use App\Models\Logo;
 use App\Models\PhoneEmail;
 use App\Models\Post;
 use Illuminate\Http\Request;
@@ -77,6 +78,7 @@ public function postDetails($id){
     $post=Post::find($id);
     $footer=Footer::all();
     $phonesandEmails=PhoneEmail::all();
-    return view('postDetails',compact('post','footer','phonesandEmails'));
+    $logos=Logo::all();
+    return view('postDetails',compact('post','footer','phonesandEmails','logos'));
 }
 }

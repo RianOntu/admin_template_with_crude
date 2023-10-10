@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\FooterController;
+use App\Http\Controllers\LogoController;
 use App\Http\Controllers\NormalUsersController;
 use App\Http\Controllers\PageController;
 use App\Http\Controllers\PhoneEmail;
@@ -112,3 +113,9 @@ Route::get('/role_delete/{id}',[RoleController::class,'delete']);
 
 //Logout
 Route::get('/logout',[RoleController::class,'logout']);
+
+//Logo routes
+Route::get('/logo',[LogoController::class,'index']);
+Route::post('/logo_create',[LogoController::class,'create']);
+Route::get('/updateLogo/{id}',[LogoController::class,'update']);
+Route::post('/edit_logo/{id}',[LogoController::class,'edit']);

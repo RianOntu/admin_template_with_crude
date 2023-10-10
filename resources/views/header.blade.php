@@ -305,6 +305,26 @@
                       </div>
                     
                      </li>
+                     <li class="nav-item dropdown {{ Auth::user()->role_id==1 ? 'd-none':'' }}">
+                      <div class="menu">
+                        <header>
+                          <button class="menu-button"><i class="nav-icon fas fa-boxes margin"></i>
+                            Logo</button>
+                        </header>
+                        <ul class="menu-list">
+                          <div class="item" style="width:117px;margin-left:54px;">
+                            
+                            
+                            
+                            <li class="list"><a class="list" href="/updateLogo/2">Update Logo</a></li>
+
+                          </div>
+                        
+                          
+                        </ul>
+                      </div>
+                    
+                     </li>
                         
                      
                     

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Footer;
+use App\Models\Logo;
 use App\Models\PhoneEmail as ModelsPhoneEmail;
 use App\Models\Policy;
 use Illuminate\Http\Request;
@@ -23,8 +24,9 @@ class PrivacyController extends Controller
         $privacyPolicies=Policy::all();
         $phonesandEmails=ModelsPhoneEmail::all();
         $footer=Footer::all();
+        $logos=Logo::all();
 
-        return view('privacyPolicy',compact('privacyPolicies','phonesandEmails','footer'));
+        return view('privacyPolicy',compact('privacyPolicies','phonesandEmails','footer','logos'));
     }
     public function update($id){
         $privacyPolicy=Policy::find($id);

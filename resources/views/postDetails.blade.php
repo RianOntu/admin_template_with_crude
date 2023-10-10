@@ -51,11 +51,16 @@
                      <form class="form-inline ">
                         @foreach($phonesandEmails as $phoneandEmail)
                         <div class="login_text"><a href="#"><i class="fa fa-phone" aria-hidden="true"></i><span class="padding_left10">Call : {{$phoneandEmail->phone}}</span></a></div>
+                        @endforeach
                      </form>
-                     <a class="logo" href="index.html"><img src={{asset("foodfinda/images/logo.png")}}></a></a>
+                     @foreach($logos as $logo)
+                     <a class="logo" href="index.html"><img style="width:60px;height:30px;" src={{asset("images/$logo->logo")}}></a></a>
                      <span class="toggle" onclick="openNav()"><i class="fa fa-bars"></i></span>
+                     @endforeach
+                     @foreach($phonesandEmails as $phoneandEmail)
                      <div class="login_text"><a href="#"><i class="fa fa-envelope" aria-hidden="true"></i><span class="padding_left10">Email : {{$phoneandEmail->email}}</span></a></div>
                      @endforeach
+                    
                      <div class="relative sm:flex sm:justify-center sm:items-center  bg-dots-darker bg-center bg-gray-100 dark:bg-dots-lighter dark:bg-gray-900 selection:bg-red-500 selection:text-white">
                         @if (Route::has('login'))
                             <div class="sm:fixed sm:top-0 sm:right-0 p-6 text-right z-10">

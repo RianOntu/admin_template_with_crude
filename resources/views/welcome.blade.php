@@ -51,9 +51,13 @@
                      <form class="form-inline ">
                         @foreach($phonesandEmails as $phoneandEmail)
                         <div class="login_text"><a href="#"><i class="fa fa-phone" aria-hidden="true"></i><span class="padding_left10">Call : {{$phoneandEmail->phone}}</span></a></div>
+                        @endforeach
                      </form>
-                     <a class="logo" href="index.html"><img src="foodfinda/images/logo.png"></a></a>
+                     @foreach($logos as $logo)
+                     <a class="logo" href="index.html"><img style="height:30px;width:60px;" src="images/{{$logo->logo}}"></a></a>
+                     @endforeach
                      <span class="toggle" onclick="openNav()"><i class="fa fa-bars"></i></span>
+                     @foreach($phonesandEmails as $phoneandEmail)
                      <div class="login_text"><a href="#"><i class="fa fa-envelope" aria-hidden="true"></i><span class="padding_left10">Email : {{$phoneandEmail->email}}</span></a></div>
                      @endforeach
                      <div class="relative sm:flex sm:justify-center sm:items-center  bg-dots-darker bg-center bg-gray-100 dark:bg-dots-lighter dark:bg-gray-900 selection:bg-red-500 selection:text-white">
