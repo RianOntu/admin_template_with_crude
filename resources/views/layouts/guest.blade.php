@@ -85,10 +85,11 @@
     </head>
     <body class="font-sans text-gray-900 antialiased">
         <div class="row">
-           
+           @foreach($login_images as $login_image)
             <div class="col-md-8 col-lg-8">
-                <img src="images/login.png" style="height:100vh" alt="">
+                <img src="images/{{$login_image->image}}" style="height:100vh" alt="">
             </div>
+           @endforeach
 
             <div class="col-md-4 col-lg-4 align-items-center d-flex ">
                 <div class="container ">

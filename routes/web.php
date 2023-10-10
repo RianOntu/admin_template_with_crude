@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\FooterController;
+use App\Http\Controllers\LoginImageController;
 use App\Http\Controllers\LogoController;
 use App\Http\Controllers\NormalUsersController;
 use App\Http\Controllers\PageController;
@@ -127,3 +128,9 @@ Route::post('/shop_create',[ShopController::class,'create']);
 Route::get('/shop',[ShopController::class,'view']);
 Route::get('/updateShop/{id}',[ShopController::class,'update']);
 Route::post('/shop_edit/{id}',[ShopController::class,'edit']);
+
+//Login image routes
+Route::get('/createLoginImage',[LoginImageController::class,'index']);
+Route::post('/login_image_create',[LoginImageController::class,'create']);
+Route::get('/updateLoginImage/{id}',[LoginImageController::class,'update']);
+Route::post('/login_image_edit/{id}',[LoginImageController::class,'edit']);

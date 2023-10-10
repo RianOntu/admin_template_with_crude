@@ -317,7 +317,7 @@
                             
                             
                             
-                            <li class="list"><a class="list" href="/updateLogo/2">Update Logo</a></li>
+                            <li class="list"><a class="list" href="/updateLogo/1">Update Logo</a></li>
 
                           </div>
                         
@@ -339,6 +339,28 @@
                             
                          
                             <li class="list"><a class="list" href="/updateShop/1">Update Shop</a></li>
+
+                          </div>
+                        
+                          
+                        </ul>
+                      </div>
+                    
+                     </li>
+                     <li class="nav-item dropdown {{ Auth::user()->role_id==1 ? 'd-none':'' }}">
+                      <div class="menu">
+                        <header>
+                          <button class="menu-button"><i class="nav-icon fas fa-image margin"></i>
+                            Login Image</button>
+                        </header>
+                        <ul class="menu-list">
+                          <div class="item" style="width:117px;margin-left:54px;">
+                            
+                            
+                            
+                         
+                            
+                            <li class="list"><a class="list" href="/updateLoginImage/1">Update Login Image</a></li>
 
                           </div>
                         
